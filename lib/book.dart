@@ -2,7 +2,7 @@ class Book{
   String _title="";
   String _author="";
   int _publicationYear=0;
-  late int _pagesRead=0;
+  late int _pagesRead;
   static int totalBooks=0;
 
   Book(String title,String author, int publicationYear){
@@ -23,6 +23,7 @@ class Book{
     return _pagesRead;
   }
   read(int pages){
+    _pagesRead=0;
     _pagesRead +=pages;
   }
 
