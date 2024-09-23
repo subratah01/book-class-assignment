@@ -1,42 +1,38 @@
 class Book{
-  String _title="";
-  String _author="";
-  int _publicationYear=0;
-  late int _pagesRead;
+  String _title;
+  String _author;
+  int _publicationYear;
+  int _pagesRead =0;
   static int totalBooks=0;
 
-  Book(String title,String author, int publicationYear){
-    _title=title;
-    _author=author;
-    _publicationYear=publicationYear;
+  // Constructor with initialization list
+  Book(this._title, this._author, this._publicationYear) {
     totalBooks++;
   }
-  getTitle(){ return _title; }
-  getAuthor(){ return _author; }
-  getPublicationYear(){ return _publicationYear; }
-  getBookAge(){
-    int currentYear = DateTime.now().year;
-    int bookAge=currentYear-_publicationYear;
-    return bookAge;
-  }
-  getPagesRead(){
-    return _pagesRead;
-  }
-  read(int pages){
-    _pagesRead=0;
-    _pagesRead +=pages;
-  }
 
-  getBookDetails(){
-    print ("==========================================");
-    print ("Book-$totalBooks details are as follows:");
-    print ("==========================================");
-    print("Title: "+ getTitle());
-    print("Author: "+ getTitle());
-    print("Publication Year: "+ getPublicationYear().toString());
-    print("Book Age: "+ getBookAge().toString());
-    print("Pages Read: "+ getPagesRead().toString());
+  // Return the book title
+  String getTitle(){ return _title; }
+  // Return the book author
+  String getAuthor(){ return _author; }
+  // Return the book publication year
+  int getPublicationYear(){ return _publicationYear; }
+  // Calculate book age based on the current year
+  int getBookAge(){ return DateTime.now().year - _publicationYear; }
+  // Return the number of pages read
+  int getPagesRead(){ return _pagesRead; }
+  // Increment the pages read
+  void read(int pages){ _pagesRead +=pages; }
+
+  // Return the Book details
+  getBookDetails() {
+    print("==========================================");
+    print("Book-$totalBooks details are as follows:");
+    print("==========================================");
+    print("Title: ${getTitle()}");
+    print("Author: ${getAuthor()}");
+    print("Publication Year: ${getPublicationYear()}");
+    print("Book Age: ${getBookAge()}");
+    print("Pages Read: ${getPagesRead()}");
     print("");
   }
-
 }
