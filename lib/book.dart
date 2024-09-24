@@ -11,15 +11,15 @@ class Book{
   }
 
   // Return the book title
-  String getTitle(){ return _title; }
+  String _getTitle(){ return _title; }
   // Return the book author
-  String getAuthor(){ return _author; }
+  String _getAuthor(){ return _author; }
   // Return the book publication year
-  int getPublicationYear(){ return _publicationYear; }
+  int _getPublicationYear(){ return _publicationYear; }
   // Calculate book age based on the current year
-  int getBookAge(){ return DateTime.now().year - _publicationYear; }
+  int _getBookAge(){ return DateTime.now().year - _publicationYear; }
   // Return the number of pages read
-  int getPagesRead(){ return _pagesRead; }
+  int _getPagesRead(){ return _pagesRead; }
   // Increment the pages read
   void read(int pages){ _pagesRead +=pages; }
 
@@ -28,11 +28,11 @@ class Book{
     print("==========================================");
     print("Book-$totalBooks details are as follows:");
     print("==========================================");
-    print("Title: ${getTitle()}");
-    print("Author: ${getAuthor()}");
-    print("Publication Year: ${getPublicationYear()}");
-    print("Book Age: ${getBookAge()}");
-    print("Pages Read: ${getPagesRead()}");
+    print("Title: ${_getTitle()}");
+    print("Author: ${_getAuthor()}");
+    print("Publication Year: ${_getPublicationYear()}");
+    print("Book Age: ${_getBookAge()}");
+    print("Pages Read: ${_getPagesRead()}");
     print("");
   }
 }
